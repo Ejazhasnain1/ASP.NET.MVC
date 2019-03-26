@@ -1,0 +1,46 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    @Scripts.Render("~/Bundles/JS")
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Style/LoginStyle.css" />
+    <link rel="stylesheet" href="~/Style/Style.css">
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <header>
+         @ViewBag.Header
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#" style="display:block">@ViewBag.List1</a>
+                <ul style="display:block" >
+                    <li><a href="#" id="editDetails">@ViewBag.List1_1</a></li>
+                    <li><a href="Logout">@ViewBag.List1_2</a></li>
+                </ul>
+            </li>
+            <li><a href="#" style="display:block">@ViewBag.List2</a>
+                <ul style="display:block">
+                    <li><a href="#" id="editAdminDetails">@ViewBag.List2_1</a></li>
+                    <li><a href="/Details/Logout">@ViewBag.List2_2</a></li>
+                </ul>
+            </li>
+            <li><a href="#">@ViewBag.List3</a></li>
+            <li><a href="#">@ViewBag.List4</a></li>
+            <li><a href="#">@ViewBag.List5</a></li>           
+        </ul>
+        @Html.Partial("_LoginPartial");
+        <div class="search">
+            <input id="searchText" type="number" placeholder="Search" name="searchText">
+            <button id="searchButton" type="button" name="searchButton">Go</button>
+        </div>       
+    </nav>
+  
+    
+    @RenderBody()
+
+</body>
+</html>

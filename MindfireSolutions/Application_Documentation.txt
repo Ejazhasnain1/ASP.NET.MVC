@@ -1,0 +1,40 @@
+The specification of this are as follows
+
+The Requirements were as follows
+
+    There should be an Admin registration page with basic details of the Admin being stored in Database 
+    The Username and Password credentials will be used for Admin login 
+	Password (The Entered password should contain at least one 
+			 Uppercase,lowercase,numeric and special character respectively and the minimum length of the password should at least be Eight
+			 The password should be stored in the database in Encrypted form)
+    Upon successful login of Admin , "Settings" option should be provided to the Admin which should enable them to Edit their Details as well as View them.
+    Functionality( The Admin should be able to see list of all Registered Users in a Tabular format with Columns including basic Users Details.
+				   Along with that, in each rows , links (like Edit,Delete,View) should be provided .
+
+    Functionality of Links
+        Edit (A Modal Popup would emerge through which the Admin can Edit the Basic Users Details)
+			  In Users Details(Username and Password should be Excluded from this)
+        Delete ( An Alert message would be shown regarding deletion of User Details)
+        View ( All User Details excluding Password should be shown)
+
+Additional Users Functionality
+    Upon Users Successful login , "Settings" option should be provided to the Users which should enable them to Edit their Details .
+	
+	
+
+Naming Convention Followed for this Application
+
+1. For CSS
+   Class: Kebab case has been used
+   Razor Id: Pascal case has been used by default 
+   CSS Id: Camel case has been used
+   
+2. For C#
+   Class: Pascal case has been used
+   Methods: Pascal case has been used
+   Variables: Camel case has been followed
+   
+3. For Scripts
+   Class: Camel case has been used
+   Methods :Camel case has been used
+   Variables: Camel case has been used

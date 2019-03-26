@@ -1,0 +1,136 @@
+﻿@model MindfireSolutions.ViewModel.MindfireEmployeeDetails
+@using MindfireSolutions.CustomHelper
+
+
+@{
+    ViewBag.Title = "DisplayUserDetails";
+    Layout = "~/Views/Shared/_SharedView.cshtml";
+    ViewBag.Header = "Mindfire Solutions";
+    ViewBag.List1 = "Settings";
+    ViewBag.List1_1 = "Edit";
+    ViewBag.List1_2 = "Logout";
+}
+<link href="~/Style/ModalStyle.css" rel="stylesheet" />
+<link href="~/Style/detailsStyle.css" rel="stylesheet" />
+<link href="~/Style/MediaQueryStyle/MediaQueryDetails.css" rel="stylesheet" />
+<link href="~/Style/MediaQueryStyle/MediaQueryModal.css" rel="stylesheet" />
+
+
+<h2>Welcome @Html.DisplayFor(model => model.Firstname) @Html.DisplayFor(model => model.Lastname)</h2>
+
+<div class="user-content">
+
+    <div class="registration-form">
+        <div class="userContent-fields">
+            @Html.Image(@Model.EmployeeImage, "Employee Image")
+        </div>
+    </div>
+
+    <div class="registration-form">
+        <div class="userContent-fields">
+            @Html.DisplayNameFor(model => model.EmployeeId)
+        </div>
+
+        <div class="userContent-value">
+            @Html.DisplayFor(model => model.EmployeeId)
+        </div>
+    </div>
+
+
+
+
+    <div class="registration-form">
+        <div class="userContent-fields">
+            @Html.DisplayNameFor(model => model.Email)
+        </div>
+
+        <div class="userContent-value">
+            @Html.DisplayFor(model => model.Email)
+        </div>
+    </div>
+
+
+
+    <div class="registration-form">
+        <div class="userContent-fields">
+            @Html.DisplayNameFor(model => model.Address)
+        </div>
+        <div class="userContent-value">
+            @Html.DisplayFor(model => model.Address)
+        </div>
+    </div>
+
+
+
+    @foreach (var values in Model.GetEmployeeContactList)
+    {
+        <div class="registration-form">
+            <div class="userContent-fields">
+                @Html.DisplayFor(model => values.ContactTypeDetails.ContactTypeValue)
+            </div>
+            <div class="userContent-value">
+                @Html.DisplayFor(model => values.ContactNumber)
+            </div>
+        </div>
+    }
+</div>
+
+
+<!-- The Modal -->
+
+<div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close" id="closeButton">&times;</span>
+            <h2>Edit Details</h2>
+        </div>
+        <div class="modal-body">
+            <div class="popup-container">
+                @using (Html.BeginForm("EditUserDetails", "Details", FormMethod.Post, new { @id = "editForm", @enctype = "multipart/form-data" }))
+                {
+                  @Html.AntiForgeryToken();
+                    @Html.ValidationSummary(true, "")
+
+                    <div class="registration-form">
+                        <div class="input-type">
+                            @Html.LabelFor(m => m.Firstname, "Firstname")<span>*</span>
+                        </div>
+                        <div class="input-value">
+                            @Html.TextBoxFor(m => m.Firstname, Model.Firstname, new { placeholder = "Enter Firstname", autocomplete = "off"})
+                        </div>
+                    </div>
+                    <div class="error" id="errorFirstname">@Html.ValidationMessage("Firstname", "")</div>
+
+                    <div class="registration-form">
+                        <div class="input-type">
+                            @Html.LabelFor(m => m.Lastname, "Lastname")<span>*</span>
+                        </div>
+                        <div class="input-value">
+                            @Html.TextBoxFor(m => m.Lastname, Model.Lastname, new { placeholder = "Enter Lastname", autocomplete = "off"})
+                        </div>
+                    </div>
+                    <div class="error" id="errorLastname">@Html.ValidationMessage("Lastname", "")</div>
+
+                    <div class="registration-form">
+                        <div class="input-type">
+                            @Html.LabelFor(m => m.Address, "Address")<span>*</span>
+                        </div>
+                        <div class="input-value">
+                            @Html.TextAreaFor(m => m.Address, 3, 40, new { placeholder = "Enter Your Address", required = "true", autocomplete = "off" })
+                        </div>
+                    </div>
+                    <div class="error" id="errorAddress">@Html.ValidationMessage("Address", "")</div>
+                }
+
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button id="saveDetails" name="saveDetails" value="Save">Save</button>
+        </div>
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,163 @@
+﻿.container {
+    margin-top: 40px;
+    height: auto;
+    margin-left: 33%;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: rgba(0,0,0,.55);
+    width: 30%;
+}
+
+span {
+    color: #e87e03;
+    font-size: 17px;
+}
+
+h1 {
+    color: #fff;
+    margin-left: 33%;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: #fff;
+    font-size: 31px;
+    margin-left: 0;
+}
+
+.fields {
+    float: left;
+    width: 100%;
+    margin-top: 25px;
+    font-weight: bold;
+    color: #8c8c8c;
+}
+
+.fields-value {
+    float: left;
+    width: 100%;
+    margin-top: 15px;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #333;
+    outline: none;
+    color: #fff;
+}
+
+textarea {
+    width: 77%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    background-color: #333;
+    color: #fff;
+}
+
+select {
+    width: 50%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    background-color: #333;
+}
+
+
+
+input[type=password] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    background-color: #333;
+}
+
+input[type=email] {
+    width: 70%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    background-color: #333;
+}
+
+textarea:focus {
+    background-color: #1AF1F7;
+}
+
+.save-button {
+    margin-left: 31%;
+    margin-top: 7%;
+    padding: 7px;
+}
+
+.register-button {
+    margin-left: 31%;
+    margin-top: 7%;
+    padding: 7px;
+}
+
+#addContactField {
+    width: 45%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+}
+
+input[type=submit] {
+    width: 35%;
+    background-color: #e50914;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+}
+
+input[type=file] {
+    width: 60%;
+    background-color: lightcoral;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+}
+
+
+
+.custom {
+    margin-left: 1%;
+    margin-top: 23px;
+    font-weight: bold;
+    color: blue;
+}
+
+input[type=submit]:hover {
+    background-color: #a04545;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+
+.registration-form:after {
+    content: "";
+    display: table;
+    clear: both;
+}

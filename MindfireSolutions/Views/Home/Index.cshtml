@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Mindfire";
+    Layout = "~/Views/Shared/_SharedView.cshtml";
+    ViewBag.Header = "Mindfire Solutions";
+    ViewBag.List1 = "Home";
+    ViewBag.List2 = "Products";
+    ViewBag.List3 = "Contact";
+    ViewBag.List4 = "FAQ";
+    ViewBag.List5 = "About";
+
+}
+
+<link href="~/Style/MediaQueryStyle/MediaQueriesLogin.css" rel="stylesheet" />
+<div>
+    <div class="homepage-display">
+        <button id="loginUser" class="homepage-button" name="loginUser" value="Login">@Html.ActionLink("Login", "LoginUser", "Login")</button>
+        <button id="registerUser" class="homepage-button" name="registerUser" value="Register">@Html.ActionLink("Register", "RegisterUser", "Register")</button>
+    </div>
+</div>
+
+
+
+

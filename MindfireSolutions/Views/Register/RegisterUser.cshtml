@@ -1,0 +1,169 @@
+﻿@model MindfireSolutions.ViewModel.MindfireEmployeeRegister
+@using MindfireSolutions.ViewModel
+@using MindfireSolutions.CustomHelper
+@{
+    ViewBag.Title = "Mindfire";
+    Layout = "~/Views/Shared/_SharedView.cshtml";
+    ViewBag.Header = "Mindfire Solutions";
+    ViewBag.Header = "Mindfire Solutions";
+    ViewBag.List1 = "Home";
+    ViewBag.List2 = "Products";
+    ViewBag.List3 = "Contact";
+    ViewBag.List4 = "FAQ";
+    ViewBag.List5 = "About";
+}
+<link href="~/Style/MediaQueryStyle/MediaQueries.css" rel="stylesheet" />
+
+
+
+<div class="container">
+    <h1>Register</h1>
+    <span>All * marked Fields are Mandatory</span>
+
+
+    @using (Html.BeginForm("RegisterUser", "Register", FormMethod.Post, new { @id = "registrationForm", @enctype = "multipart/form-data" }))
+    {
+       @Html.AntiForgeryToken();
+        @Html.ValidationSummary(true, "")
+
+                    <div class="registration-form">
+                        <div class="fields">
+                            @Html.LabelFor(m => m.Firstname, "Firstname")<span>*</span>
+                        </div>
+                        <div class="fields-value">
+                            @Html.TextBoxFor(m => m.Firstname, "", new { placeholder = "Enter Firstname", autocomplete = "off" })
+                        </div>
+                    </div>
+                    <div class="error" id="errorFirstname">@Html.ValidationMessage("Firstname", "")</div>
+
+
+                    <div class="registration-form">
+                        <div class="fields">
+                            @Html.LabelFor(m => m.Lastname, "Lastname")<span>*</span>
+                        </div>
+                        <div class="fields-value">
+                            @Html.TextBoxFor(m => m.Lastname, "", new { placeholder = "Enter Lastname", autocomplete = "off" })
+                        </div>
+                    </div>
+                    <div class="error" id="errorLastname">@Html.ValidationMessage("Lastname", "")</div>
+
+
+                    <div class="registration-form">
+                        <div class="fields">
+                            @Html.LabelFor(m => m.Email, "Username")<span>*</span>
+                        </div>
+                        <div class="fields-value">
+                            @Html.TextBoxFor(m => m.Email, "", new { placeholder = "Enter your Email-Id", autocomplete = "off", @class = "email-check" })
+                        </div>
+                    </div>
+                    <div class="error" id="emailAvailabilty">@Html.ValidationMessage("Email", "")</div>
+                    <div class="error" id="errorEmailId">@TempData["emailError"]</div>
+
+
+
+                    <div class="registration-form">
+                        <div class="fields">
+                            @Html.LabelFor(m => m.Address, "Address")<span>*</span>
+                        </div>
+                        <div class="fields-value">
+                            @Html.TextAreaFor(m => m.Address, 3, 40, new { placeholder = "Enter Your Address", autocomplete = "off" })
+                        </div>
+                    </div>
+                    <div class="error" id="errorAddress">@Html.ValidationMessage("Address", "")</div>
+
+
+
+                    <div class="registration-form">
+                        <div class="fields">
+                            @Html.LabelFor(m => m.ImageUpload, "Upload Image")<span>*</span>
+                        </div>
+                        <div class="fields-value">
+                            @Html.FileFor("ImageUpload", "ImageUpload")
+                        </div>
+                    </div>
+                    <div class="error" id="errorFile">@Html.ValidationMessage("ImageUpload", "")</div>
+                    <div class="error">@TempData["fileError"]</div>
+
+
+
+                    <div class="registration-form">
+                        <div class="fields">
+                            @Html.LabelFor(m => m.ContactNumber, "Contact")
+                        </div>
+                        <div id="cloneItem">
+                            <div class="fields-value">
+                                @Html.DropDownListFor(m => m.UserContactList, new SelectList(Enum.GetValues(typeof(ContactList))))
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="registration-form">
+                        <div class="fields-value">
+                            @Html.TextBoxFor(m => m.ContactNumber, "", new { placeholder = "Enter your Number", autocomplete = "off" })
+                        </div>
+                        <div class="error" id="errorContactInfo">@Html.ValidationMessage("ContactNumber", "")</div>
+                        <div id="addItem" class="fields-value">
+                            <button type="button" id="addContactField" class="homepage-button" name="addContactField">Add Contact</button>
+                        </div>
+                    </div>
+                    <div class="error">@TempData["contactError"]</div>
+
+
+                    <div class="registration-form">
+                        <div class="fields">
+                            @Html.LabelFor(m => m.Password, "Password")<span>*</span>
+                        </div>
+                        <div class="fields-value">
+                            @Html.PasswordFor(m => m.Password, new { placeholder = "Enter Password" })
+                        </div>
+                    </div>
+                    <div class="error" id="errorPassword">@Html.ValidationMessage("Password", "")</div>
+
+
+                    <div class="registration-form">
+                        <div class="fields">
+                            @Html.LabelFor(m => m.ConfirmPassword, "Confirm Password")<span>*</span>
+                        </div>
+                        <div class="fields-value">
+                            @Html.PasswordFor(m => m.ConfirmPassword, new { placeholder = "Enter Password"})
+                        </div>
+                    </div>
+                    <div class="error" id="errorConfirmPassword">@Html.ValidationMessage("ConfirmPassword", "")</div>
+
+
+                    <div class="registration-form">
+                        <div>
+                            <input type="submit" id="register" class="register-button" name="register" value="Register">
+                        </div>
+                    </div>
+         }
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

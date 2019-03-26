@@ -1,0 +1,57 @@
+﻿@model MindfireSolutions.ViewModel.EmployeeLogin
+@{
+    ViewBag.Title = "LoginUser";
+    Layout = "~/Views/Shared/_SharedView.cshtml";
+    ViewBag.Header = "Mindfire Solutions";
+    ViewBag.Header = "Mindfire Solutions";
+    ViewBag.List1 = "Home";
+    ViewBag.List2 = "Products";
+    ViewBag.List3 = "Contact";
+    ViewBag.List4 = "FAQ";
+    ViewBag.List5 = "About";
+}
+
+<link href="~/Style/MediaQueryStyle/MediaQueriesLogin.css" rel="stylesheet" />
+
+
+<div class="container">
+    <h1>Login</h1>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken();
+        @Html.ValidationSummary(true)
+
+        <div class="error">@TempData["error"]</div>
+
+        <div class="registration-form">
+            <div class="fields">
+                @Html.LabelFor(m => m.Email, "Username")
+            </div>
+            <div class="fields-value">
+                @Html.TextBoxFor(m => m.Email, "", new { placeholder = "Enter Username" })
+            </div>
+        </div>
+        <div class="error">@Html.ValidationMessage("Email", "")</div>
+
+
+        <div class="registration-form">
+            <div class="fields">
+                @Html.LabelFor(m => m.Password, "Password")
+            </div>
+            <div class="fields-value">
+                @Html.PasswordFor(m => m.Password, new { placeholder = "Enter Password" })
+            </div>
+        </div>
+        <div class="error">@Html.ValidationMessage("Password", "")</div>
+
+
+        <div class="registration-form">
+            <div>
+                <input type="submit" class="save-button" id="register" name="saveButton" value="Login">
+            </div>
+        </div>
+    }
+</div>
+
+
+

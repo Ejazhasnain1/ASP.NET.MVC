@@ -1,0 +1,91 @@
+h2 {
+    color: #fff;
+    margin-top: 2%;
+    margin-left: 39%;
+}
+
+.user-content {
+    height: auto;
+    width: auto;
+    border-radius: 15px;
+    margin-left: 37%;
+    padding: 20px;
+    width: 24%;
+    margin-top: 2%;
+    background-color: white;
+}
+
+
+ul li ul li {
+    padding: 0;
+}
+
+ul li ul {
+    line-height: 45px;
+}
+
+
+ul li:hover ul li {
+    display: block;
+}
+
+
+.userContent-value {
+    width: 100%;
+    font-weight: bold;
+    color: #495092;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    overflow-wrap: break-word;
+}
+
+.userContent-fields {
+    width: 100%;
+    font-weight: bold;
+    display: inline;
+}
+
+button {
+    width: 45%;
+    background-color: #e50914;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+    font-weight: bold;
+}
+
+.image-view {
+    margin-bottom: 5%;
+    border-radius: 50%;
+    margin-left: 33%;
+    height: 90px;
+    width: 90px;
+}
+
+#viewUserDetails {
+    margin-top: 3%;
+    margin-left: 24%;
+}
+
+#viewUserDetails:hover {
+    background-color: #a04545;
+ }
+
+#dashboard {
+    margin-top: 3%;
+    margin-left: 24%;
+}
+
+#dashboard:hover {
+     background-color: #a04545;
+ }
+
+.registration-form:after {
+    content: "";
+    display: table;
+    clear: both;
+}

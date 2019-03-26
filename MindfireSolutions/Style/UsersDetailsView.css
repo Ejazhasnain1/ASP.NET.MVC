@@ -1,0 +1,61 @@
+table {
+    background-color: #A6838D;
+    width: 65%;
+    margin-left: 14%;
+    border-radius: 7px;
+    overflow: auto;
+    border-collapse: collapse;
+}
+
+h2 {
+    color: white;
+    font-size: 30px;
+    margin-left: 40%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+
+table th {
+    padding-right: 10%;
+    padding-left: 1%;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    text-align: left;
+    color: black;
+}
+
+table td {
+    padding-bottom: 2%;
+    padding-left: 1%;
+}
+
+
+a {
+    color: White;
+}
+
+td a{
+    color:lightblue;
+}
+
+.search {
+    display: none;
+}
+
+table tr:hover {
+    background-color: grey;
+}
+
+button{
+    width: 8%;
+    background-color: #5bc0de;
+    border-radius:2px;
+    color: white;
+    margin-left:1%;
+    padding: 10px 20px;
+    border: none;    
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+    font-weight: bold;
+}

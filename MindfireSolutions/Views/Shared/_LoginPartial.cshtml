@@ -1,0 +1,13 @@
+﻿@if(Request.IsAuthenticated)
+{
+    <ul class="shift-right">
+        <li>
+            @Html.ActionLink("Hello  " + User.Identity.Name + "  ","null","null")
+        </li>
+    </ul>
+    <style>
+        .search{
+            display:none;
+        }
+    </style>
+}

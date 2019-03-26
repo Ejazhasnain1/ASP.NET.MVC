@@ -1,0 +1,124 @@
+﻿@*View to show all Users Details*@
+
+@model IEnumerable<MindfireSolutions.Models.Employee>
+@using MindfireSolutions.CustomHelper
+
+@{
+    ViewBag.Title = "UserDetails";
+    Layout = "~/Views/Shared/_SharedView.cshtml";
+    ViewBag.Header = "Mindfire Solutions";
+}
+<link href="~/Style/UsersDetailsView.css" rel="stylesheet" />
+<link href="~/Style/MediaQueryStyle/MediaQueryUsersDetail.css" rel="stylesheet" />
+<link href="~/Style/ModalStyle.css" rel="stylesheet" />
+<link href="~/Style/MediaQueryStyle/MediaQueryModal.css" rel="stylesheet" />
+<div>
+    <button>@Html.ActionLink("Home", "AdminDetails", "Admin")</button>
+</div>
+
+
+<h2>UserDetails</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Firstname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lastname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+        var idValue = item.EmployeeId;
+        var firstname = item.Firstname;
+        var lastname = item.Lastname;
+        var address = item.Address;
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Firstname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lastname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                <a href="#" id="" onclick="editUsersDetails(@idValue)">Edit</a>
+                @Html.ActionLink("Details", "ViewUserDetails", new { userId = item.EmployeeId })
+                @Html.ActionLink("Delete", "DeleteUser", new { userId = item.EmployeeId }, new { onclick = "return confirm('Do You want to delete User Details ?')" })
+            </td>
+        </tr>
+    }
+</table>
+
+@*Modal View to Edit a User Details*@
+
+<div id="myUsersModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="closeUserModal" id="closeUserButton">&times;</span>
+            <h2>Edit Details</h2>
+        </div>
+        <div class="modal-body">
+            <div class="popup-container">
+                @using (Html.BeginForm("EditDetails", "Admin", FormMethod.Post, new { @id = "editUsersForm", @enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken();
+                    @Html.ValidationSummary(true, "")
+
+                    <input type="hidden" id="hiddenId" name="EmployeeId" />
+                            <div class="registration-form">
+                                <div class="input-type">
+                                    <label for="fname">Firstname<span>*</span>  :</label>
+                                </div>
+                                <div class="input-value">
+                                    <input type="text" id="fname" required name="Firstname" oninput="validate.isNameValid('fname', 'errorFirstname')">
+                                </div>
+                            </div>
+                            <div class="error" id="errorFirstname">@Html.ValidationMessage("fname", "")</div>
+
+                            <div class="registration-form">
+                                <div class="input-type">
+                                    <label for="lname">Lastname<span>*</span>  :</label>
+                                </div>
+                                <div class="input-value">
+                                    <input type="text" id="lname" required name="Lastname" oninput="validate.isNameValid('lname', 'errorLastname')">
+                                </div>
+                            </div>
+                            <div class="error" id="errorLastname">@Html.ValidationMessage("lname", "")</div>
+
+                            <div class="registration-form">
+                                <div class="input-type">
+                                    <label for="permanentAddress">Address<span>*</span>  :</label>
+                                </div>
+                                <div class="input-value">
+                                    <textarea id="permanentAddress" rows="3" cols="40" required name="Address" oninput="validate.isAddressValid('Address','errorAddress')"></textarea>
+                                </div>
+                            </div>
+                            <div class="error" id="errorAddress">@Html.ValidationMessage("permanentAddress", "")</div>
+                       }
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button id="saveUsersDetails" name="saveUsersDetails" onclick="saveUserDetails()">Save</button>
+        </div>
+    </div>
+</div>
+
+

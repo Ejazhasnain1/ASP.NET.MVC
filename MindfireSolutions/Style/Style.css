@@ -1,0 +1,146 @@
+﻿* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    background-image: url('../UploadImage/background.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.error {
+    color: #e87e03;
+    font-size: 15px;
+    font-family: serif;
+}
+
+header {
+    background-color: #333333;
+    width: 100%;
+    color: cadetblue;
+    font-size: 35px;
+    font-style: initial;
+    font-weight: 900;
+    padding: 15px;
+}
+
+/*style for Navigation starts */
+
+nav {
+    position: sticky;
+    background-color: #333333;
+    height: 63px;
+    top: 0;
+}
+
+    nav ul {
+        float: left;
+        list-style-type: none;
+        overflow: hidden;
+    }
+
+
+li {
+    display: inline-block;
+    text-align: center;
+    padding: 23px 30px;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+
+ul li a:hover {
+    opacity: .8;
+}
+
+
+ul li ul li {
+    display: none;
+}
+.shift-right{
+    float:right;
+    margin-top:10px;
+}
+.shift-right li a{
+    color: #e87e03;
+}
+
+.search {
+    width: 27%;
+    float: right;
+    margin: 15px 50px 15px 0;
+}
+
+#searchButton {
+    width: 10%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+    #searchButton:hover {
+        background-color: #a04545;
+    }
+
+input:focus {
+    background-color: #cb75e0;
+}
+
+
+
+input[type=number] {
+    width: 70%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+.homepage-display {
+    width: 25%;
+    margin-left: 37%;
+    padding: 3%;
+    border-radius: 5px;
+    margin-top: 5%;
+    background-color: rgba(0,0,0,.55);
+}
+
+#loginUser {
+    width: 35%;
+    background-color: #e50914;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 14%;
+    outline: none;
+}
+
+#registerUser {
+    width: 35%;
+    background-color: #e50914;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+}
+
+#loginUser:hover {
+    background-color: #a04545;
+}
+
+#registerUser:hover {
+    background-color: #a04545;
+}
